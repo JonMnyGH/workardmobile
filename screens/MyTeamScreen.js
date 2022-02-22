@@ -6,6 +6,7 @@ import {
   ActivityIndicator,
   FlatList,
   Image,
+  Modal,
   StyleSheet,
   Text,
   View,
@@ -122,6 +123,7 @@ const MyTeamScreen = props => {
           color={theme.colors.secondary}
         />
       </View>
+      <Modal animationType={'none'} />
     </ScreenContainer>
   );
 };

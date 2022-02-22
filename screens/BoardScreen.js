@@ -2,7 +2,11 @@ import React from 'react';
 import * as WorkardApi from '../apis/WorkardApi.js';
 import * as WorkardTODApi from '../apis/WorkardTODApi.js';
 import * as WorkardcompleteApi from '../apis/WorkardcompleteApi.js';
+import * as GlobalVariables from '../config/GlobalVariableContext';
 import {
+  ActionSheet,
+  ActionSheetCancel,
+  ActionSheetItem,
   Divider,
   ScreenContainer,
   Swiper,
@@ -22,10 +26,61 @@ import {
 import { Fetch } from 'react-request';
 
 const BoardScreen = props => {
+  const Constants = GlobalVariables.useValues();
+  const Variables = Constants;
+  const setGlobalVariableValue = GlobalVariables.useSetValue();
+
   const { theme } = props;
 
   return (
     <ScreenContainer hasSafeArea={true} scrollable={false}>
+      <ActionSheet visible={Constants['visible']}>
+        <ActionSheetItem
+          onPress={() => {
+            try {
+              setGlobalVariableValue({
+                key: 'visible',
+                value: false,
+              });
+            } catch (err) {
+              console.error(err);
+            }
+          }}
+          style={styles.ActionSheetItem_1S}
+          label={'Move to previous step'}
+          color={theme.colors.background}
+        />
+        <ActionSheetItem
+          onPress={() => {
+            try {
+              setGlobalVariableValue({
+                key: 'visible',
+                value: false,
+              });
+            } catch (err) {
+              console.error(err);
+            }
+          }}
+          style={styles.ActionSheetItemDa}
+          label={'Move to next step'}
+          color={theme.colors.background}
+        />
+        <ActionSheetCancel
+          onPress={() => {
+            try {
+              setGlobalVariableValue({
+                key: 'visible',
+                value: false,
+              });
+            } catch (err) {
+              console.error(err);
+            }
+          }}
+          label={'Cancel'}
+          color={theme.colors.error}
+        />
+      </ActionSheet>
+
       <View style={styles.ViewiX}>
         <Swiper
           style={styles.SwiperIP}
@@ -65,7 +120,18 @@ const BoardScreen = props => {
                         renderItem={({ item }) => {
                           const listData = item;
                           return (
-                            <Touchable>
+                            <Touchable
+                              onPress={() => {
+                                try {
+                                  setGlobalVariableValue({
+                                    key: 'visible',
+                                    value: true,
+                                  });
+                                } catch (err) {
+                                  console.error(err);
+                                }
+                              }}
+                            >
                               <View
                                 style={[
                                   styles.ViewO3,
@@ -419,6 +485,12 @@ const BoardScreen = props => {
 };
 
 const styles = StyleSheet.create({
+  ActionSheetItem_1S: {
+    textAlign: 'center',
+  },
+  ActionSheetItemDa: {
+    textAlign: 'center',
+  },
   TextnN: {
     fontSize: 30,
     paddingBottom: 30,

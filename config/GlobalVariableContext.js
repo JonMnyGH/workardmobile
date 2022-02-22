@@ -7,6 +7,7 @@ const DeviceVariables = {};
 const AppVariables = {
   AvatarPlaceholder:
     'https://workardicons.s3.amazonaws.com/Avatar+Users2_47.png',
+  visible: false,
 };
 const GlobalVariableContext = React.createContext();
 const GlobalVariableUpdater = React.createContext();
