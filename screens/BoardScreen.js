@@ -1,5 +1,7 @@
 import React from 'react';
 import * as WorkardApi from '../apis/WorkardApi.js';
+import * as WorkardTODApi from '../apis/WorkardTODApi.js';
+import * as WorkardcompleteApi from '../apis/WorkardcompleteApi.js';
 import {
   Divider,
   ScreenContainer,
@@ -176,7 +178,7 @@ const BoardScreen = props => {
               showsVerticalScrollIndicator={true}
               bounces={true}
             >
-              <WorkardApi.FetchWorkardInprogresGET>
+              <WorkardTODApi.FetchNewEndpointGET>
                 {({ loading, error, data, doFetch }) => {
                   const fetchData = data;
                   if (!fetchData || loading) {
@@ -284,7 +286,7 @@ const BoardScreen = props => {
                     />
                   );
                 }}
-              </WorkardApi.FetchWorkardInprogresGET>
+              </WorkardTODApi.FetchNewEndpointGET>
             </ScrollView>
           </SwiperItem>
 
@@ -298,7 +300,7 @@ const BoardScreen = props => {
               showsVerticalScrollIndicator={true}
               bounces={true}
             >
-              <WorkardApi.FetchWorkardInprogresGET>
+              <WorkardcompleteApi.FetchNewEndpointGET>
                 {({ loading, error, data, doFetch }) => {
                   const fetchData = data;
                   if (!fetchData || loading) {
@@ -406,7 +408,7 @@ const BoardScreen = props => {
                     />
                   );
                 }}
-              </WorkardApi.FetchWorkardInprogresGET>
+              </WorkardcompleteApi.FetchNewEndpointGET>
             </ScrollView>
           </SwiperItem>
         </Swiper>
