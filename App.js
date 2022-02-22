@@ -12,7 +12,6 @@ import DraftbitTheme from './themes/DraftbitTheme.js';
 import cacheAssetsAsync from './config/cacheAssetsAsync';
 import { GlobalVariableProvider } from './config/GlobalVariableContext';
 import { useFonts } from 'expo-font';
-import { Actor_400Regular } from '@expo-google-fonts/actor';
 import {
   AdventPro_400Regular,
   AdventPro_600SemiBold,
@@ -24,7 +23,6 @@ const queryClient = new QueryClient();
 const App = () => {
   const [isReady, setIsReady] = React.useState(false);
   const [fontsLoaded] = useFonts({
-    Actor_400Regular,
     AdventPro_400Regular,
     AdventPro_400Regular,
     AdventPro_600SemiBold,

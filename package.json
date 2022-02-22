@@ -18,7 +18,6 @@
   },
   "dependencies": {
     "@draftbit/ui": "43.4.12",
-    "@expo-google-fonts/actor": "*",
     "@expo-google-fonts/advent-pro": "*",
     "@expo-google-fonts/aldrich": "*",
     "@expo/vector-icons": "^12.0.0",

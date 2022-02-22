@@ -110,11 +110,13 @@ const MyTeamScreen = props => {
 
       <View style={styles.View_9y} pointerEvents={'auto'}>
         <IconButton
+          style={styles.IconButtonBy}
           icon={'AntDesign/plus'}
           size={32}
           color={theme.colors.secondary}
         />
         <IconButton
+          style={styles.IconButtonR3}
           icon={'AntDesign/minus'}
           size={32}
           color={theme.colors.secondary}
@@ -181,6 +183,12 @@ const styles = StyleSheet.create({
   },
   View_4M: {
     flex: 1,
+  },
+  IconButtonBy: {
+    marginLeft: 50,
+  },
+  IconButtonR3: {
+    marginRight: 50,
   },
   View_9y: {
     flexDirection: 'row',
