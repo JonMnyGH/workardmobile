@@ -47,7 +47,7 @@ const BoardScreen = props => {
             }
           }}
           style={styles.ActionSheetItem_1S}
-          label={'Move to previous step'}
+          label={'Move to inprogress'}
           color={theme.colors.background}
         />
         <ActionSheetItem
@@ -62,7 +62,7 @@ const BoardScreen = props => {
             }
           }}
           style={styles.ActionSheetItemDa}
-          label={'Move to next step'}
+          label={'Move to Done'}
           color={theme.colors.background}
         />
         <ActionSheetCancel
