@@ -1,8 +1,12 @@
 import React from 'react';
+import * as GlobalVariables from '../config/GlobalVariableContext';
 import { ScreenContainer, withTheme } from '@draftbit/ui';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 
 const NewItemScreen = props => {
+  const Constants = GlobalVariables.useValues();
+  const Variables = Constants;
+
   const { theme } = props;
 
   const [textInputValue, setTextInputValue] = React.useState('');
@@ -18,26 +22,30 @@ const NewItemScreen = props => {
         </View>
 
         <View style={styles.ViewUs}>
-          <TextInput
-            onChangeText={newTextInputValue => {
-              const textInputValue = newTextInputValue;
-              try {
-                setTextInputValue(textInputValue);
-              } catch (err) {
-                console.error(err);
-              }
-            }}
-            style={[
-              styles.TextInputCj,
-              {
-                borderColor: theme.colors.divider,
-                color: theme.colors.secondary,
-              },
-            ]}
-            placeholder={'Enter a title'}
-            value={textInputValue}
-            placeholderTextColor={theme.colors.light}
-          />
+          <>
+            {Constants['visible'] ? null : (
+              <TextInput
+                onChangeText={newTextInputValue => {
+                  const textInputValue = newTextInputValue;
+                  try {
+                    setTextInputValue(textInputValue);
+                  } catch (err) {
+                    console.error(err);
+                  }
+                }}
+                style={[
+                  styles.TextInputCj,
+                  {
+                    borderColor: theme.colors.divider,
+                    color: theme.colors.secondary,
+                  },
+                ]}
+                placeholder={'Enter a title'}
+                value={textInputValue}
+                placeholderTextColor={theme.colors.light}
+              />
+            )}
+          </>
         </View>
 
         <View pointerEvents={'auto'}>
