@@ -5,10 +5,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const DeviceVariables = { AUTHORIZATION_HEADER: '' };
 const AppVariables = {
-  ERROR_MESSAGE: '',
-  visible: false,
   AvatarPlaceholder:
     'https://workardicons.s3.amazonaws.com/Avatar+Users2_47.png',
+  visible: false,
+  ERROR_MESSAGE: '',
 };
 const GlobalVariableContext = React.createContext();
 const GlobalVariableUpdater = React.createContext();

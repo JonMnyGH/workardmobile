@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     borderWidth: 1,
     textAlign: 'center',
-    marginTop: 16,
+    marginTop: 50,
   },
   ImageBackgroundaS: {
     height: '100%',
