@@ -1,12 +1,6 @@
 import React from 'react';
 import Images from '../config/Images';
-import {
-  ButtonSolid,
-  Icon,
-  ScreenContainer,
-  TextField,
-  withTheme,
-} from '@draftbit/ui';
+import { ButtonSolid, ScreenContainer, withTheme } from '@draftbit/ui';
 import {
   Image,
   KeyboardAvoidingView,
@@ -18,8 +12,6 @@ import {
 const LoginWithEmailScreen = props => {
   const { theme } = props;
   const { navigation } = props;
-
-  const [textFieldValue, setTextFieldValue] = React.useState('');
 
   return (
     <ScreenContainer hasSafeArea={true} scrollable={true}>
@@ -52,39 +44,6 @@ const LoginWithEmailScreen = props => {
         </View>
 
         <View style={styles.ViewRr}>
-          <TextField
-            onChangeText={newTextFieldSolidValue => {
-              const textFieldValue = newTextFieldSolidValue;
-              try {
-                setTextFieldValue(textFieldValue);
-              } catch (err) {
-                console.error(err);
-              }
-            }}
-            placeholder={''}
-            type={'solid'}
-            value={textFieldValue}
-            label={'Email'}
-            keyboardType={'email-address'}
-            defaultValue={'Jon.Olson@skywardfederal.com'}
-          />
-          <TextField
-            onChangeText={newPasswordValue => {
-              const textFieldValue = newPasswordValue;
-              try {
-                setTextFieldValue(textFieldValue);
-              } catch (err) {
-                console.error(err);
-              }
-            }}
-            style={styles.TextFieldop}
-            placeholder={''}
-            type={'solid'}
-            value={textFieldValue}
-            secureTextEntry={true}
-            label={'Password'}
-            keyboardType={'visible-password'}
-          />
           <ButtonSolid
             onPress={() => {
               try {
@@ -97,25 +56,24 @@ const LoginWithEmailScreen = props => {
               styles.ButtonSolidIM,
               { backgroundColor: theme.colors.secondary },
             ]}
-            title={'Log In'}
+            title={'Log in\n'}
           />
         </View>
 
-        <View style={styles.ViewjA}>
-          <Icon
+        <View style={styles.Viewvf}>
+          <ButtonSolid
+            onPress={() => {
+              try {
+                navigation.navigate('Workard', { screen: 'BoardScreen' });
+              } catch (err) {
+                console.error(err);
+              }
+            }}
             style={[
-              styles.IconI7,
-              { backgroundColor: theme.colors.background },
+              styles.ButtonSolidGY,
+              { backgroundColor: theme.colors.secondary },
             ]}
-            name={'Ionicons/finger-print-outline'}
-            size={50}
-            color={theme.colors.secondary}
-          />
-          <Icon
-            style={styles.IconTC}
-            name={'MaterialCommunityIcons/face-recognition'}
-            size={50}
-            color={theme.colors.secondary}
+            title={'Continue'}
           />
         </View>
       </KeyboardAvoidingView>
@@ -145,9 +103,6 @@ const styles = StyleSheet.create({
     maxWidth: 300,
     alignSelf: 'center',
   },
-  TextFieldop: {
-    marginTop: 8,
-  },
   ButtonSolidIM: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -164,22 +119,21 @@ const styles = StyleSheet.create({
     paddingRight: 32,
     marginBottom: 24,
   },
-  IconI7: {
-    left: '30%',
-    position: 'absolute',
-  },
-  IconTC: {
-    left: 50,
-  },
-  ViewjA: {
-    paddingBottom: 0,
-    alignItems: 'flex-start',
-    paddingTop: 0,
-    alignContent: 'center',
-    justifyContent: 'center',
+  ButtonSolidGY: {
     flexDirection: 'row',
-    alignSelf: 'stretch',
-    marginLeft: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 8,
+    minHeight: 42,
+    fontFamily: 'System',
+    fontWeight: '700',
+    textAlign: 'center',
+    marginTop: 16,
+  },
+  Viewvf: {
+    paddingLeft: 32,
+    paddingRight: 32,
+    marginBottom: 24,
   },
   KeyboardAvoidingViewSz: {
     justifyContent: 'space-around',

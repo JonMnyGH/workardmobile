@@ -17,7 +17,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "@draftbit/ui": "43.4.13",
+    "@draftbit/ui": "43.4.14",
     "@expo-google-fonts/advent-pro": "*",
     "@expo-google-fonts/aldrich": "*",
     "@expo/vector-icons": "^12.0.0",

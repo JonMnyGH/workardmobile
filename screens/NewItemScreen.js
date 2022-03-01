@@ -42,7 +42,7 @@ const NewItemScreen = props => {
                 ]}
                 placeholder={'Enter a title'}
                 placeholderTextColor={theme.colors.light}
-                defaultValue={Constants['ERROR_MESSAGE']}
+                defaultValue={Constants['AvatarPlaceholder']}
               />
             )}
           </>

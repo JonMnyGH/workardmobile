@@ -3,7 +3,6 @@ import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
 import {
   AntDesign,
-  Ionicons,
   MaterialCommunityIcons,
   MaterialIcons,
   Octicons,
@@ -29,7 +28,6 @@ export default function cacheAssetsAsync() {
   const imageAssets = cacheImages(Object.values(IMAGES));
   const iconAssets = cacheFonts([
     AntDesign.font,
-    Ionicons.font,
     MaterialCommunityIcons.font,
     MaterialIcons.font,
     Octicons.font,
